@@ -16,7 +16,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "title",
+  title: "Islamic School",
   description: "description",
 };
 
