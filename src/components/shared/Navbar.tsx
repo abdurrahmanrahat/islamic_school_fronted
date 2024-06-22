@@ -10,14 +10,14 @@ const Navbar = () => {
 
   const navItems = (
     <>
-      <li className="hover:text-yellow-600 transition-colors duration-500">
+      <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
         <ActiveLink href="/">Home</ActiveLink>
       </li>
-      <li className="relative group cursor-pointer ">
-        <p className="hover:text-yellow-600 transition-colors duration-500">
+      <li className="relative group cursor-pointer  px-2 py-[1px] md:py-4">
+        <span className="hover:text-yellow-600 transition-colors duration-500 ">
           Faculties
-        </p>
-        <ul className="absolute top-10 left-0 bg-[#1b1464] p-4 space-y-2 opacity-0 transform -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 duration-300 transition-all w-44 rounded-xl border-y-[3px] border-yellow-600 pointer-events-none group-hover:pointer-events-auto z-[999]">
+        </span>
+        <ul className="absolute top-10 md:top-14 left-0 bg-[#1b1464] p-4 space-y-2 opacity-0 transform -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 duration-300 transition-all w-44 rounded-xl border-y-[3px] border-yellow-600 pointer-events-none group-hover:pointer-events-auto z-[999]">
           <li className="hover:text-yellow-600 transition-colors duration-500">
             <ActiveLink href="/faculties/quran">Quran</ActiveLink>
           </li>
@@ -37,11 +37,12 @@ const Navbar = () => {
           </li>
         </ul>
       </li>
-      <li className="relative group cursor-pointer">
+
+      <li className="relative group cursor-pointer px-2 py-[1px] md:py-4">
         <span className="hover:text-yellow-600 transition-colors duration-500">
           Courses
         </span>
-        <ul className="absolute top-10 left-0 bg-[#1b1464] p-4 space-y-2 opacity-0 transform -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 duration-300 transition-all w-44 rounded-xl border-y-[3px] border-yellow-600 pointer-events-none group-hover:pointer-events-auto z-[999]">
+        <ul className="absolute top-10 md:top-14 left-0 bg-[#1b1464] p-4 space-y-2 opacity-0 transform -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 duration-300 transition-all w-44 rounded-xl border-y-[3px] border-yellow-600 pointer-events-none group-hover:pointer-events-auto z-[999]">
           <li className="hover:text-yellow-600 transition-colors duration-500">
             <ActiveLink href="/faculties/quran">Quran</ActiveLink>
           </li>
@@ -62,29 +63,29 @@ const Navbar = () => {
         </ul>
       </li>
 
-      <li className="hover:text-yellow-600 transition-colors duration-500">
+      <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
         <ActiveLink href="/islamic-library">Islamic Library</ActiveLink>
       </li>
 
-      <li className="hover:text-yellow-600 transition-colors duration-500">
+      <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
         <ActiveLink href="/islamic-qa">Islamic Q&A</ActiveLink>
       </li>
-      <li className="hover:text-yellow-600 transition-colors duration-500">
+      <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
         <ActiveLink href="/blog">Blog</ActiveLink>
       </li>
-      <li className="hover:text-yellow-600 transition-colors duration-500">
+      <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
         <ActiveLink href="/contact">Contact</ActiveLink>
       </li>
-      <li className="hover:text-yellow-600 transition-colors duration-500">
+      <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
         <ActiveLink href="/about">About</ActiveLink>
       </li>
     </>
   );
 
   return (
-    <nav className="py-5 px-7 md:px-[4%] bg-[#1b1464] text-white flex justify-between items-center relative">
+    <nav className="py-5 md:py-2 px-7 md:px-[4%] bg-[#1b1464] text-white flex justify-between items-center relative">
       <h2 className="text-[28px] font-semibold">Logo</h2>
-      <ul className="hidden md:flex gap-4 text-[16px] md:text-[17px] font-medium">
+      <ul className="hidden md:flex text-[16px] md:text-[17px] font-medium">
         {navItems}
       </ul>
 
