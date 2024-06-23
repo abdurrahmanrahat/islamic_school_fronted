@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
-import ActiveLink from "../ui/ActiveLink";
+import ActiveLink from "../Ui/ActiveLink";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
