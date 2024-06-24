@@ -2,6 +2,7 @@
 
 import { IMAGES } from "@/image-data";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
@@ -118,7 +119,9 @@ const Navbar = () => {
         </ul>
 
         <div className="">
-          <button className="custom_button bg-secondary">Login</button>
+          <Link href="/login">
+            <button className="custom_button bg-secondary">Login</button>
+          </Link>
         </div>
       </nav>
     </div>

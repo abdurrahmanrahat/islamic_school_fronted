@@ -3,12 +3,21 @@
 import ISForm from "@/components/Shared/Forms/ISForm";
 import ISInput from "@/components/Shared/Forms/ISInput";
 import Container from "@/components/Ui/Container";
+import { registerUser } from "@/services/actions/registerUser";
 import Link from "next/link";
 import { FieldValues } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const RegisterPage = () => {
-  const handleRegister = (values: FieldValues) => {
-    console.log(values);
+  const handleRegister = async (values: FieldValues) => {
+    try {
+      const res = await registerUser(values);
+      if (res.success) {
+        toast.success(res.message);
+      }
+    } catch (error: any) {
+      console.log(error.message);
+    }
   };
 
   return (
