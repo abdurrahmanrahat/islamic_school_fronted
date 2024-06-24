@@ -3,17 +3,33 @@
 import ISForm from "@/components/Shared/Forms/ISForm";
 import ISInput from "@/components/Shared/Forms/ISInput";
 import Container from "@/components/Ui/Container";
+import { loginUser } from "@/services/actions/loginUser";
 import { registerUser } from "@/services/actions/registerUser";
+import { storeUserInfo } from "@/services/auth.services";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FieldValues } from "react-hook-form";
 import toast from "react-hot-toast";
 
 const RegisterPage = () => {
+  const router = useRouter();
+
   const handleRegister = async (values: FieldValues) => {
     try {
       const res = await registerUser(values);
       if (res.success) {
         toast.success(res.message);
+
+        // auto login after user register
+        const userRes = await loginUser({
+          email: values.email,
+          password: values.password,
+        });
+
+        if (userRes.success) {
+          storeUserInfo({ accessToken: userRes.token });
+          router.push("/");
+        }
       }
     } catch (error: any) {
       console.log(error.message);
