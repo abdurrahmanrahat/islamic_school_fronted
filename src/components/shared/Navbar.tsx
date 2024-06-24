@@ -1,5 +1,7 @@
 "use client";
 
+import { IMAGES } from "@/image-data";
+import Image from "next/image";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
@@ -83,39 +85,44 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="py-5 md:py-2 px-7 md:px-[4%] bg-[#1b1464] text-white flex justify-between items-center relative">
-      <h2 className="text-[28px] font-semibold">Logo</h2>
-      <ul className="hidden md:flex text-[16px] md:text-[17px] font-medium">
-        {navItems}
-      </ul>
+    <div className="bg-primary text-white">
+      <nav className="w-[90%] max-w-[1240px] mx-auto py-5 md:py-2 flex justify-between items-center relative">
+        <div className="flex gap-3">
+          {/* mobile menu */}
+          <div className="md:hidden">
+            {/* toggle open icon */}
+            <div onClick={() => setIsNavOpen((prev) => !prev)}>
+              {isNavOpen ? (
+                <IoMdClose className="h-8 w-8 font-semibold" />
+              ) : (
+                <GiHamburgerMenu className="w-8 h-8" />
+              )}
+            </div>
 
-      <div className="hidden md:block">
-        <button>Button</button>
-      </div>
-
-      {/* mobile menu */}
-      <div className="md:hidden">
-        {/* toggle open icon */}
-        <div onClick={() => setIsNavOpen((prev) => !prev)}>
-          {isNavOpen ? (
-            <IoMdClose className="h-8 w-8 font-semibold" />
-          ) : (
-            <GiHamburgerMenu className="w-8 h-8" />
-          )}
+            <div
+              className={`absolute ${
+                isNavOpen ? "top-20" : "-top-[450px]"
+              }  right-0 bg-primary w-full p-7 transition-all duration-500 border-t-2 border-yellow-600 rounded-t z-[999]`}
+            >
+              <ul className="space-y-4 text-[16px] md:text-[17px]">
+                {navItems}
+              </ul>
+            </div>
+          </div>
+          {/* <h2 className="text-[28px] font-semibold">Logo</h2> */}
+          <Image src={IMAGES.shared.Logo} alt="Logo" />
         </div>
 
-        <div
-          className={`absolute ${
-            isNavOpen ? "top-20" : "-top-[450px]"
-          }  right-0 bg-[#1b1464] w-full p-7 transition-all duration-500 border-t-2 border-yellow-600 rounded-t`}
-        >
-          <ul className="space-y-4 text-[16px] md:text-[17px]">{navItems}</ul>
+        <ul className="hidden md:flex text-[16px] md:text-[17px] font-medium">
+          {navItems}
+        </ul>
+
+        <div className="">
+          <button className="custom_button bg-secondary">Login</button>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 
 export default Navbar;
-
-// py-12 md:py-24 xl:py-28 px-7 md:px-[4%]
