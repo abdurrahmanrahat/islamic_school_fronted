@@ -3,13 +3,22 @@
 import ISForm from "@/components/Shared/Forms/ISForm";
 import ISInput from "@/components/Shared/Forms/ISInput";
 import Container from "@/components/Ui/Container";
+import { loginUser } from "@/services/actions/loginUser";
 import Link from "next/link";
 import { FieldValues } from "react-hook-form";
+import toast from "react-hot-toast";
 import { FaGoogle } from "react-icons/fa";
 
 const LoginPage = () => {
-  const handleLogin = (values: FieldValues) => {
-    console.log(values);
+  const handleLogin = async (values: FieldValues) => {
+    try {
+      const res = await loginUser(values);
+      if (res.success) {
+        toast.success(res.message);
+      }
+    } catch (error: any) {
+      console.log(error.message);
+    }
   };
 
   return (
