@@ -46,11 +46,10 @@ const LoginPage = () => {
                   htmlFor="email"
                   className="block text-start font-medium mb-[2px]"
                 >
-                  Email
+                  Email or Number
                 </label>
                 <ISInput
                   name="email"
-                  type="email"
                   className="w-full block py-[10px] px-3 rounded text-[15px] focus:outline-none text-black"
                   placeholder="Enter email address or phone number"
                 />
