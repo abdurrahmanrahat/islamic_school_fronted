@@ -3,6 +3,8 @@
 import ISForm from "@/components/Shared/Forms/ISForm";
 import ISInput from "@/components/Shared/Forms/ISInput";
 import Container from "@/components/Ui/Container";
+import Link from "next/link";
+import { FaGoogle } from "react-icons/fa";
 
 const LoginPage = () => {
   const handleLogin = (values) => {
@@ -64,6 +66,23 @@ const LoginPage = () => {
               />
             </div>
           </ISForm>
+
+          {/* google login */}
+          <div className="space-y-4 mt-8">
+            <div className="flex justify-center items-center space-x-2 border p-2 border-gray-300 rounded cursor-pointer">
+              <FaGoogle size={26} />
+              <p>Continue with Google</p>
+            </div>
+            <p className="px-6 text-sm text-center text-gray-200">
+              Do not have an account yet?{" "}
+              <Link
+                href="/register"
+                className="hover:underline duration-300 hover:text-secondary text-gray-200"
+              >
+                Sign up
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </Container>
