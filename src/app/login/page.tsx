@@ -4,17 +4,18 @@ import ISForm from "@/components/Shared/Forms/ISForm";
 import ISInput from "@/components/Shared/Forms/ISInput";
 import Container from "@/components/Ui/Container";
 import Link from "next/link";
+import { FieldValues } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
 
 const LoginPage = () => {
-  const handleLogin = (values) => {
+  const handleLogin = (values: FieldValues) => {
     console.log(values);
   };
 
   return (
     <Container>
-      <div className="relative w-full max-w-[420px] mx-auto h-screen flex justify-center items-center">
-        <div className="relative w-full h-auto bg-primary text-white py-16 px-8 text-center rounded-lg">
+      <div className="relative w-full max-w-[420px] mx-auto h-auto min-h-screen flex justify-center items-center">
+        <div className="relative w-full h-auto bg-primary text-white py-8 px-8 text-center rounded-lg">
           <h2 className="custom_sub_heading font-semibold mb-4">Login</h2>
           <ISForm
             onSubmit={handleLogin}
