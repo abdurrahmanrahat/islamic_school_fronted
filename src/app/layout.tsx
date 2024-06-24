@@ -1,7 +1,7 @@
-import Footer from "@/components/Shared/Footer";
-import Navbar from "@/components/Shared/Navbar";
+import Providers from "@/lib/Providers/Providers";
 import type { Metadata } from "next";
 import { Poppins, Roboto } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -26,12 +26,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light">
-      <body className={poppins.className}>
-        <Navbar />
-        <div className="min-h-screen">{children}</div>
-        <Footer />
-      </body>
-    </html>
+    <Providers>
+      <html lang="en" data-theme="light">
+        <body className={poppins.className}>
+          <>
+            {children}
+            <Toaster />
+          </>
+        </body>
+      </html>
+    </Providers>
   );
 }
