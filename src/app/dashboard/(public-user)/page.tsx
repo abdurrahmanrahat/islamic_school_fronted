@@ -1,5 +1,5 @@
-const UserDashboard = () => {
+const UserDashboardHomePage = () => {
   return <div>User Dashboard</div>;
 };
 
-export default UserDashboard;
+export default UserDashboardHomePage;
