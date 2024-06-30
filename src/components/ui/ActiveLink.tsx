@@ -16,7 +16,10 @@ const ActiveLink = ({ href, exact = false, children }: TActiveLinkProps) => {
 
   return (
     <div>
-      <Link href={href} className={active ? "text-secondary font-medium" : ""}>
+      <Link
+        href={href}
+        className={active ? "text-secondary font-semibold text-[17px]" : ""}
+      >
         {children}
       </Link>
     </div>

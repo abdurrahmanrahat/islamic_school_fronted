@@ -38,9 +38,14 @@ const Navbar = () => {
           <li className="hover:text-yellow-600 transition-colors duration-500">
             <ActiveLink href="/faculties/islamic">Islamic</ActiveLink>
           </li>
+          <li className="hover:text-yellow-600 transition-colors duration-500">
+            <ActiveLink href="/islamic-library">Islamic Library</ActiveLink>
+          </li>
+          <li className="hover:text-yellow-600 transition-colors duration-500">
+            <ActiveLink href="/islamic-qa">Islamic Q&A</ActiveLink>
+          </li>
         </ul>
       </li>
-
       <li className="relative group cursor-pointer px-2 py-[1px] md:py-4">
         <span className="hover:text-yellow-600 transition-colors duration-500">
           Courses
@@ -65,14 +70,6 @@ const Navbar = () => {
           </li>
         </ul>
       </li>
-
-      <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
-        <ActiveLink href="/islamic-library">Islamic Library</ActiveLink>
-      </li>
-
-      <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
-        <ActiveLink href="/islamic-qa">Islamic Q&A</ActiveLink>
-      </li>
       <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
         <ActiveLink href="/blog">Blog</ActiveLink>
       </li>
@@ -81,6 +78,9 @@ const Navbar = () => {
       </li>
       <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
         <ActiveLink href="/about">About</ActiveLink>
+      </li>
+      <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
+        <ActiveLink href="/dashboard">Dashboard</ActiveLink>
       </li>
     </>
   );
