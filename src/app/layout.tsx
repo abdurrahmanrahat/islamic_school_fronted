@@ -26,15 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Providers>
-      <html lang="en" data-theme="light">
-        <body className={poppins.className}>
-          <>
-            {children}
-            <Toaster />
-          </>
-        </body>
-      </html>
-    </Providers>
+    <html lang="en" data-theme="light">
+      <body className={poppins.className}>
+        <Providers>
+          {children}
+          <Toaster />
+        </Providers>
+      </body>
+    </html>
   );
 }
