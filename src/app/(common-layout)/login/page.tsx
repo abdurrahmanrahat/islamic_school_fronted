@@ -21,9 +21,12 @@ const LoginPage = () => {
         toast.success(res.message);
         storeUserInfo({ accessToken: res.token });
         router.push("/");
+      } else {
+        toast.error(res.message);
       }
     } catch (error: any) {
       console.log(error.message);
+      toast.error(error.message);
     }
   };
 
