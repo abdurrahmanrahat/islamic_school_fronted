@@ -36,7 +36,7 @@ const Navbar = () => {
             </ActiveLink>
           </li>
           <li className="hover:text-yellow-600 transition-colors duration-500">
-            <ActiveLink href="/faculties/islamic">Islamic</ActiveLink>
+            <ActiveLink href="/faculties/islamic">Counseling</ActiveLink>
           </li>
           <li className="hover:text-yellow-600 transition-colors duration-500">
             <ActiveLink href="/islamic-library">Islamic Library</ActiveLink>
