@@ -1,6 +1,5 @@
 "use client";
 
-import ActiveLink from "@/components/Ui/ActiveLink";
 import { IMAGES } from "@/image-data";
 import {
   Avatar,
@@ -17,8 +16,20 @@ import { Menu, SearchIcon, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode, useEffect, useState } from "react";
+import {
+  adminSidebarItems,
+  instructorSidebarItems,
+  studentSidebarItems,
+} from "../Sidebar/item-lists";
+import SidebarItem from "../Sidebar/SidebarItem";
 
-export default function DashboardNavbar({ children }: { children: ReactNode }) {
+export default function DashboardNavbar({
+  role,
+  children,
+}: {
+  role: string;
+  children: ReactNode;
+}) {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
   // Toggle function to handle the navbar's display
@@ -42,13 +53,6 @@ export default function DashboardNavbar({ children }: { children: ReactNode }) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpenMenu]);
-
-  const navItems = [
-    { id: 2, text: "Dashboard", href: "/dashboard" },
-    { id: 3, text: "My Courses", href: "/dashboard/my-courses" },
-    { id: 4, text: "Manage Courses", href: "/dashboard/manage-courses" },
-    { id: 5, text: "Contact", href: "/contact" },
-  ];
 
   return (
     <div>
@@ -82,14 +86,18 @@ export default function DashboardNavbar({ children }: { children: ReactNode }) {
           {/* mobile nav items */}
           <nav className="mt-8">
             <div className="space-y-[6px]">
-              {navItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="px-4 py-2 md:text-[17px] border-b-2 hover:border-b-2 hover:border-secondary rounded-lg my-1 cursor-pointer duration-300"
-                >
-                  <ActiveLink href={item.href}>{item.text}</ActiveLink>
-                </div>
-              ))}
+              {role === "student" &&
+                studentSidebarItems.map((item, index) => (
+                  <SidebarItem key={index} item={item} />
+                ))}
+              {role === "instructor" &&
+                instructorSidebarItems.map((item, index) => (
+                  <SidebarItem key={index} item={item} />
+                ))}
+              {role === "admin" &&
+                adminSidebarItems.map((item, index) => (
+                  <SidebarItem key={index} item={item} />
+                ))}
             </div>
           </nav>
         </div>

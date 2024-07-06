@@ -1,15 +1,15 @@
 import { ReactNode } from "react";
 import DashboardNavbar from "../../components/Shared/DashboardNavbar/DashboardNavbar";
-import UserSidebar from "../../components/Shared/Sidebar/UserSidebar";
+import Sidebar from "../../components/Shared/Sidebar/Sidebar";
 
 const UserLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="grid grid-cols-12">
       <div className="col-span-12 md:col-span-3 hidden md:block">
-        <UserSidebar />
+        <Sidebar role="student" />
       </div>
       <div className="col-span-12 md:col-span-9">
-        <DashboardNavbar>{children}</DashboardNavbar>
+        <DashboardNavbar role="student">{children}</DashboardNavbar>
       </div>
     </div>
   );
