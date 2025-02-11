@@ -167,8 +167,11 @@ const QuranCourseRegistration = () => {
             <input
               type="submit"
               value="Registration"
-              className="custom_button bg-primary-500 text-white font-medium text-[17px]"
+              className="custom_button bg-primary text-white font-medium text-[17px]"
             />
+            {/* <Button type="submit" asChild size="lg">
+              Registration
+            </Button> */}
           </div>
         </ISForm>
       </div>

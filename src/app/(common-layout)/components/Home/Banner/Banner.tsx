@@ -1,4 +1,4 @@
-import Container from "@/components/shared/UI/Container";
+import Container from "@/components/shared/Ui/Container";
 
 const Banner = () => {
   return (

@@ -2,7 +2,7 @@
 
 import ISForm from "@/components/shared/Forms/ISForm";
 import ISInput from "@/components/shared/Forms/ISInput";
-import Container from "@/components/shared/UI/Container";
+import Container from "@/components/shared/Ui/Container";
 import { loginUser } from "@/services/actions/loginUser";
 import { registerUser } from "@/services/actions/registerUser";
 import { storeUserInfo } from "@/services/auth.services";

@@ -1,4 +1,4 @@
-import ActiveLink from "@/components/shared/UI/ActiveLink";
+import ActiveLink from "@/components/shared/Ui/ActiveLink";
 
 type TItemProps = {
   text: string;
