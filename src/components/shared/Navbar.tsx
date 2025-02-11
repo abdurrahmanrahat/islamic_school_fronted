@@ -123,7 +123,7 @@ const Navbar = () => {
           {/* <Link href="/login">
             <button className="custom_button bg-secondary">Login</button>
           </Link> */}
-          <Button asChild size="lg">
+          <Button asChild size="default">
             <Link href="/login" className="text-base">
               Login
             </Link>

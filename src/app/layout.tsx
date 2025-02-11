@@ -1,7 +1,8 @@
 import Providers from "@/lib/Providers/Providers";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import { Toaster } from "react-hot-toast";
+// import { Toaster } from "react-hot-toast";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <Providers>
           {children}
+          {/* <Toaster /> */}
           <Toaster />
         </Providers>
       </body>
