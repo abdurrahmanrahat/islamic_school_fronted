@@ -1,6 +1,6 @@
 import Providers from "@/lib/Providers/Providers";
 import type { Metadata } from "next";
-import { Poppins, Roboto } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
@@ -9,11 +9,11 @@ const roboto = Roboto({
   subsets: ["latin"],
   display: "swap",
 });
-const poppins = Poppins({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
+// const poppins = Poppins({
+//   weight: "400",
+//   subsets: ["latin"],
+//   display: "swap",
+// });
 
 export const metadata: Metadata = {
   title: "Islamic School",
@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="light">
-      <body className={poppins.className}>
+      <body className={roboto.className}>
         <Providers>
           {children}
           <Toaster />

@@ -1,6 +1,6 @@
 "use client";
 
-import Container from "@/components/Ui/Container";
+import Container from "@/components/shared/UI/Container";
 import { IMAGES } from "@/image-data";
 import Image from "next/image";
 import Link from "next/link";

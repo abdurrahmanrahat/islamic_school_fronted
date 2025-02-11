@@ -1,8 +1,8 @@
 "use client";
 
-import ISForm from "@/components/Shared/Forms/ISForm";
-import ISInput from "@/components/Shared/Forms/ISInput";
-import Container from "@/components/Ui/Container";
+import ISForm from "@/components/shared/Forms/ISForm";
+import ISInput from "@/components/shared/Forms/ISInput";
+import Container from "@/components/shared/UI/Container";
 import { loginUser } from "@/services/actions/loginUser";
 import { registerUser } from "@/services/actions/registerUser";
 import { storeUserInfo } from "@/services/auth.services";
