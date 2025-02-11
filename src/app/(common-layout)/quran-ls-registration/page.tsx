@@ -6,7 +6,7 @@ import ISInput from "@/components/shared/Forms/ISInput";
 import ISRadio from "@/components/shared/Forms/ISRadio";
 import { FieldValues } from "react-hook-form";
 
-const quranCourseRegistrationDefaultValues = {
+const quranLSRegistrationDefaultValues = {
   userName: "",
   userEmail: "",
   userGender: "",
@@ -17,20 +17,20 @@ const quranCourseRegistrationDefaultValues = {
   whatsAppNumber: "",
 };
 
-const QuranCourseRegistration = () => {
-  const handleQuranCourseRegistration = async (values: FieldValues) => {
+const QuranLSRegistration = () => {
+  const handleQuranLSRegistration = async (values: FieldValues) => {
     console.log(values);
   };
 
   return (
     <div className="min-h-screen">
       <h2 className="mt-10 text-xl md:text-2xl font-semibold text-center">
-        কোরআন শিক্ষা কোর্স
+        কুরআন শিক্ষার আসর - ২
       </h2>
       <div className="max-w-[980px] mx-auto my-16 px-4">
         <ISForm
-          onSubmit={handleQuranCourseRegistration}
-          defaultValues={quranCourseRegistrationDefaultValues}
+          onSubmit={handleQuranLSRegistration}
+          defaultValues={quranLSRegistrationDefaultValues}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* name */}
@@ -179,4 +179,4 @@ const QuranCourseRegistration = () => {
   );
 };
 
-export default QuranCourseRegistration;
+export default QuranLSRegistration;

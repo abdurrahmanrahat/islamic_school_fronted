@@ -1,5 +1,6 @@
 "use client";
 
+import ActiveLink from "@/components/shared/Ui/ActiveLink";
 import { Button } from "@/components/ui/button";
 import { IMAGES } from "@/image-data";
 import Image from "next/image";
@@ -7,7 +8,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
-import ActiveLink from "./Ui/ActiveLink";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
