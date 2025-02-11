@@ -12,6 +12,10 @@ import { IoMdClose } from "react-icons/io";
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
+  const isAdmin = true;
+  const isInstructor = false;
+  const isStudent = false;
+
   const navItems = (
     <>
       <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
@@ -80,8 +84,13 @@ const Navbar = () => {
       <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
         <ActiveLink href="/about">About</ActiveLink>
       </li>
+      {/* conditional */}
       <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
-        <ActiveLink href="/dashboard">Dashboard</ActiveLink>
+        {isAdmin && <ActiveLink href="/dashboard/admin">Dashboard</ActiveLink>}
+        {isInstructor && (
+          <ActiveLink href="/dashboard/instructor">Dashboard</ActiveLink>
+        )}
+        {isStudent && <ActiveLink href="/dashboard">Dashboard</ActiveLink>}
       </li>
     </>
   );
@@ -120,9 +129,6 @@ const Navbar = () => {
         </ul>
 
         <div className="">
-          {/* <Link href="/login">
-            <button className="custom_button bg-secondary">Login</button>
-          </Link> */}
           <Button asChild size="default">
             <Link href="/login" className="text-base">
               Login
