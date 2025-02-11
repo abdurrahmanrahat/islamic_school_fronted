@@ -25,7 +25,7 @@ const QuranCourseRegistration = () => {
   return (
     <div className="min-h-screen">
       <h2 className="mt-10 text-xl md:text-2xl font-semibold text-center">
-        কোরআন শিক্ষা কোর্স ফর্ম
+        কোরআন শিক্ষা কোর্স
       </h2>
       <div className="max-w-[980px] mx-auto my-16 px-4">
         <ISForm

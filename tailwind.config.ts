@@ -16,6 +16,15 @@ const config: Config = {
       xl: "1280px",
     },
     extend: {
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+      },
+      keyframes: {
+        spin: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
