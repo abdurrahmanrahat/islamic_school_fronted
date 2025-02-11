@@ -1,17 +1,24 @@
+import {
+  BookOpen,
+  LayoutDashboard,
+  MessageCircle,
+  Settings,
+  Users,
+} from "lucide-react";
+
 export const studentSidebarItems = [
-  { text: "Dashboard", href: "/dashboard" },
-  { text: "My Courses", href: "/dashboard/my-courses" },
-  { text: "Manage Courses", href: "/dashboard/manage-courses" },
-  { text: "Contact", href: "/contact" },
+  { text: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { text: "My Courses", href: "/dashboard/my-courses", icon: BookOpen },
+  { text: "Contact", href: "/contact", icon: MessageCircle },
 ];
 export const instructorSidebarItems = [
-  { text: "Dashboard", href: "/dashboard" },
-  { text: "My Courses", href: "/dashboard/my-courses" },
-  { text: "Contact", href: "/contact" },
+  { text: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { text: "My Courses", href: "/dashboard/my-courses", icon: BookOpen },
+  { text: "Contact", href: "/contact", icon: MessageCircle },
 ];
 export const adminSidebarItems = [
-  { text: "Dashboard", href: "/dashboard" },
-  { text: "Add Course", href: "/dashboard/add-course" },
-  { text: "Manage Courses", href: "/dashboard/manage-courses" },
-  { text: "Manage Users", href: "/dashboard/manage-users" },
+  { text: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { text: "Add Course", href: "/dashboard/add-course", icon: BookOpen },
+  { text: "Manage Courses", href: "/dashboard/manage-courses", icon: Settings },
+  { text: "Manage Users", href: "/dashboard/manage-users", icon: Users },
 ];

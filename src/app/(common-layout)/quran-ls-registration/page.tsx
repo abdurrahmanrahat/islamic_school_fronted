@@ -29,7 +29,6 @@ const QuranLSRegistration = () => {
     console.log(values);
     try {
       const res = await addQuranLSUserRegistration(values).unwrap();
-      console.log(res);
 
       if (res.success) {
         toast({
@@ -40,8 +39,6 @@ const QuranLSRegistration = () => {
         });
       }
     } catch (error: any) {
-      console.log(error);
-
       toast({
         variant: "destructive",
         title: "something went wrong!",

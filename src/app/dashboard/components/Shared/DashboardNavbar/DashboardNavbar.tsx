@@ -21,6 +21,7 @@ import {
   instructorSidebarItems,
   studentSidebarItems,
 } from "../Sidebar/item-lists";
+
 import SidebarItem from "../Sidebar/SidebarItem";
 
 export default function DashboardNavbar({
@@ -72,7 +73,7 @@ export default function DashboardNavbar({
         {/* Mobile menu */}
         <div
           id="navbar"
-          className={`fixed md:hidden top-0 left-0 w-[70%] h-screen bg-primary text-white ease-in-out duration-700 z-[999] p-[20px] ${
+          className={`fixed md:hidden top-0 left-0 bg-white w-[70%] border-r h-screen ease-in-out duration-700 z-[999] p-[20px] ${
             isOpenMenu ? "translate-x-0" : "-translate-x-full"
           }`}
         >

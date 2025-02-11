@@ -13,7 +13,7 @@ import SidebarItem from "./SidebarItem";
 
 const Sidebar = ({ role }: { role: string }) => {
   return (
-    <div className="bg-primary text-white h-screen px-4 md:px-0 py-4 md:py-0">
+    <div className="h-screen px-4 md:px-0 py-4 md:py-0 border-r">
       <Container>
         <div className="p-10">
           {/* logo section */}
