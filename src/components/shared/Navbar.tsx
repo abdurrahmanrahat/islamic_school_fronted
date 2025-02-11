@@ -104,7 +104,7 @@ const Navbar = () => {
             <div
               className={`absolute ${
                 isNavOpen ? "top-20" : "-top-[450px]"
-              }  right-0 bg-primary w-full p-7 transition-all duration-500 border-t-2 border-yellow-600 rounded-t z-[999]`}
+              }  right-0 bg-primary text-white w-full p-7 transition-all duration-500 border-t-2 border-yellow-600 rounded-t z-[999]`}
             >
               <ul className="space-y-4 text-[16px] md:text-[17px]">
                 {navItems}
