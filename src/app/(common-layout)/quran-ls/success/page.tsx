@@ -40,6 +40,7 @@ export default function QuranLSSuccess() {
             <Link
               href="https://chat.whatsapp.com/CIoA4VYQflb5bDGpbzqYoV"
               className="block"
+              target="_blank"
             >
               <Button className="w-full bg-primary text-white">
                 <MessageCircle className="mr-2 h-4 w-4" />
@@ -49,6 +50,7 @@ export default function QuranLSSuccess() {
             <Link
               href="https://chat.whatsapp.com/JPMxi25s7XBB5ueTl4QZ4y"
               className="block"
+              target="_blank"
             >
               <Button className="w-full bg-primary text-white ">
                 <MessageCircle className="mr-2 h-4 w-4" />
@@ -63,6 +65,7 @@ export default function QuranLSSuccess() {
           <Link
             href="https://www.facebook.com/groups/28654909407490704/?ref=share&mibextid=NSMWBT"
             className="block"
+            target="_blank"
           >
             <Button className="bg-primary text-white">
               <Facebook className="mr-2 h-4 w-4" />

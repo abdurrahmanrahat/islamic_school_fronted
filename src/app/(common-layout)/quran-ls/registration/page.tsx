@@ -18,6 +18,8 @@ const quranLSRegistrationDefaultValues = {
   address: "",
   phoneNumber: "",
   whatsAppNumber: "",
+  paymentMethod: "",
+  RegFeeNumber: "",
 };
 
 const QuranLSRegistration = () => {
@@ -41,7 +43,7 @@ const QuranLSRegistration = () => {
         });
 
         // navigate user
-        router.push("/quran-ls/payment");
+        router.push("/quran-ls/success");
       }
     } catch (error: any) {
       toast({
@@ -190,6 +192,58 @@ const QuranLSRegistration = () => {
                 className="w-full block py-[10px] px-3 rounded text-[15px] focus:outline-none text-black border border-primary-100"
                 placeholder=""
               />
+            </div>
+          </div>
+
+          <div className="mt-14">
+            <h2 className=" text-lg md:text-xl font-medium text-center mb-8">
+              আপনি এই{" "}
+              <span className="italic text-primary font-semibold">
+                01788880835
+              </span>{" "}
+              নাম্বারে রেজিষ্ট্রেশন ফি{" "}
+              <span className="italic text-primary font-semibold">৩০০</span>{" "}
+              টাকা বিকাশ/নগদ থেকে সেন্ড মানি করুন
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+              {/* gander */}
+              <div>
+                <label
+                  htmlFor="paymentMethod"
+                  className="block text-start font-medium mb-[4px]"
+                >
+                  আপনি কোন মাধ্যমে ফি পাঠিয়েছেন?{" "}
+                  <span className="text-red-600 font-semibold">*</span>
+                </label>
+                <ISRadio
+                  name="paymentMethod"
+                  options={[
+                    { value: "bkash", label: "বিকাশ" },
+                    { value: "nagad", label: "নগদ" },
+                    { value: "bank", label: "ব্যাংক" },
+                  ]}
+                  className="flex gap-6"
+                />
+              </div>
+
+              {/*"phoneNumber */}
+              <div>
+                <label
+                  htmlFor="RegFeeNumber"
+                  className="block text-start font-medium mb-[2px]"
+                >
+                  যে নাম্বার থেকে রেজি ফি পাঠিয়েছেন সেই নাম্বার টি লিখুন /
+                  ব্যাংক একাউন্টের শেষ ৬ ডিজিট লিখুন{" "}
+                  <span className="text-red-600 font-semibold">*</span>
+                </label>
+                <ISInput
+                  name="RegFeeNumber"
+                  //   type="number"
+                  className="w-full block py-[10px] px-3 rounded text-[15px] focus:outline-none text-black border border-primary-100"
+                  placeholder=""
+                />
+              </div>
             </div>
           </div>
 

@@ -9,6 +9,8 @@ export type TQuranLSUser = {
   phoneNumber: string;
   whatsAppNumber: string;
   batchNo: string;
+  paymentMethod: string;
+  RegFeeNumber: string;
   createdAt: string;
   updatedAt: string;
   __v: number;
