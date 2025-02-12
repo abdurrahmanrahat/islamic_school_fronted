@@ -127,6 +127,7 @@ const QuranLSRegistration = () => {
                 placeholder="Pick Your Birthday"
                 name="dateOfBirth"
                 className="border p-2 rounded"
+                // className="w-full block py-[10px] px-3 rounded text-[15px] focus:outline-none text-black border border-primary"
               />
             </div>
 

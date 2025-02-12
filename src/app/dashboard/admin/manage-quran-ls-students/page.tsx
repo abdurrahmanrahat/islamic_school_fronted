@@ -75,3 +75,6 @@ const ManageQuranLSStudent = () => {
 };
 
 export default ManageQuranLSStudent;
+
+// completed - green
+// waiting - red
