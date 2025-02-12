@@ -12,6 +12,7 @@
     "@headlessui/react": "^2.1.0",
     "@nextui-org/react": "^2.4.2",
     "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-separator": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.2",
     "@radix-ui/react-toast": "^1.2.6",
     "@reduxjs/toolkit": "^2.2.5",

@@ -58,7 +58,8 @@ const QuranLSPayment = () => {
                   htmlFor="RegFeeNumber"
                   className="block text-start font-medium mb-[2px]"
                 >
-                  রেজি ফি পাঠানো নাম্বার লিখুন{" "}
+                  যে নাম্বার থেকে রেজি ফি পাঠিয়েছেন সেই নাম্বার টি লিখুন /
+                  ব্যাংক একাউন্টের শেষ ৬ ডিজিট লিখুন{" "}
                   <span className="text-red-600 font-semibold">*</span>
                 </label>
                 <ISInput
