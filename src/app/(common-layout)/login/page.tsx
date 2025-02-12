@@ -3,30 +3,47 @@
 import ISForm from "@/components/shared/Forms/ISForm";
 import ISInput from "@/components/shared/Forms/ISInput";
 import Container from "@/components/shared/Ui/Container";
+import { useToast } from "@/hooks/use-toast";
 import { loginUser } from "@/services/actions/loginUser";
 import { storeUserInfo } from "@/services/auth.services";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FieldValues } from "react-hook-form";
-import toast from "react-hot-toast";
 import { FaGoogle } from "react-icons/fa";
 
 const LoginPage = () => {
+  const { toast } = useToast();
   const router = useRouter();
 
   const handleLogin = async (values: FieldValues) => {
     try {
       const res = await loginUser(values);
       if (res.success) {
-        toast.success(res.message);
-        storeUserInfo({ accessToken: res.token });
+        toast({
+          title: "Success!!",
+          description: res.message,
+          duration: 3000,
+          className: "bg-green-600 text-white",
+        });
+
+        storeUserInfo({ accessToken: res.data });
         router.push("/");
       } else {
-        toast.error(res.message);
+        toast({
+          variant: "destructive",
+          title: "something went wrong!",
+          description: res.message || "Try again.",
+          duration: 3000,
+        });
       }
     } catch (error: any) {
       console.log(error.message);
-      toast.error(error.message);
+      toast({
+        variant: "destructive",
+        title: "something went wrong!",
+        description: error?.data?.errorSources[0].message || "Try again.",
+        duration: 3000,
+      });
     }
   };
 

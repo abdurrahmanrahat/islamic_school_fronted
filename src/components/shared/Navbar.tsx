@@ -3,6 +3,7 @@
 import ActiveLink from "@/components/shared/Ui/ActiveLink";
 import { Button } from "@/components/ui/button";
 import { IMAGES } from "@/image-data";
+import { getUserInfo, removeUser } from "@/services/auth.services";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -12,9 +13,17 @@ import { IoMdClose } from "react-icons/io";
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
+  const user = getUserInfo();
+  console.log("user", user);
+
   const isAdmin = true;
   const isInstructor = false;
   const isStudent = false;
+
+  // logout user
+  const handleLogout = () => {
+    removeUser();
+  };
 
   const navItems = (
     <>
@@ -128,7 +137,20 @@ const Navbar = () => {
           {navItems}
         </ul>
 
-        <div className="">
+        {/* <div className="">
+          {user ? (
+            <Button asChild size="default" onClick={handleLogout}>
+              Logout
+            </Button>
+          ) : (
+            <Button asChild size="default">
+              <Link href="/login" className="text-base">
+                Login
+              </Link>
+            </Button>
+          )}
+        </div> */}
+        <div>
           <Button asChild size="default">
             <Link href="/login" className="text-base">
               Login
