@@ -6,6 +6,7 @@ import ISInput from "@/components/shared/Forms/ISInput";
 import ISRadio from "@/components/shared/Forms/ISRadio";
 import { useToast } from "@/hooks/use-toast";
 import { useAddQuranLSUserRegistrationMutation } from "@/redux/api/quran-lsApi";
+import { useRouter } from "next/navigation";
 import { FieldValues } from "react-hook-form";
 
 const quranLSRegistrationDefaultValues = {
@@ -21,6 +22,7 @@ const quranLSRegistrationDefaultValues = {
 
 const QuranLSRegistration = () => {
   const { toast } = useToast();
+  const router = useRouter();
 
   // redux api
   const [addQuranLSUserRegistration] = useAddQuranLSUserRegistrationMutation();
@@ -37,6 +39,9 @@ const QuranLSRegistration = () => {
           duration: 3000,
           className: "bg-green-600 text-white",
         });
+
+        // navigate user
+        router.push("/quran-ls/payment");
       }
     } catch (error: any) {
       toast({
