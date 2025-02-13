@@ -1,6 +1,7 @@
 "use client";
 
 import { Loader } from "@/components/shared/Ui/Loader";
+
 import {
   Table,
   TableBody,
@@ -11,11 +12,10 @@ import {
 } from "@/components/ui/table";
 import { useGetQuranLSUsersQuery } from "@/redux/api/quran-lsApi";
 import { TQuranLSUser } from "@/types/quran-ls.type";
-import { Ellipsis } from "lucide-react";
+import StatusChangeDropdown from "../../components/Admin/Manage-quran-ls-students/StatusChangeDropdown";
 
 const ManageQuranLSStudent = () => {
   const { data: quranLSStudents, isLoading } = useGetQuranLSUsersQuery({});
-  console.log(quranLSStudents);
 
   if (isLoading) {
     return <Loader text="Loading..." />;
@@ -26,46 +26,70 @@ const ManageQuranLSStudent = () => {
       <div>
         {quranLSStudents?.data.length > 0 ? (
           <Table className="border">
-            <TableHeader>
+            <TableHeader className="">
               <TableRow className="bg-gray-100">
-                <TableHead className="text-base text-black font-medium">
+                <TableHead className="text-base text-black font-semibold">
+                  #
+                </TableHead>
+                <TableHead className="text-base text-black font-semibold">
                   Username
                 </TableHead>
 
-                <TableHead className="text-base text-black font-medium">
+                <TableHead className="text-base text-black font-semibold">
                   Payment Method
                 </TableHead>
-                <TableHead className="text-base text-black font-medium">
+                <TableHead className="text-base text-black font-semibold">
                   Payment Digits
                 </TableHead>
-                <TableHead className="text-base text-black font-medium">
+                <TableHead className="text-base text-black font-semibold">
                   Phone Number
                 </TableHead>
-                <TableHead className="text-base text-black font-medium">
+                <TableHead className="text-base text-black font-semibold">
+                  WhatsApp
+                </TableHead>
+                <TableHead className="text-base text-black font-semibold">
                   Batch
                 </TableHead>
-                <TableHead className="text-base text-black font-medium">
+                <TableHead className="text-base text-black font-semibold">
                   Status
                 </TableHead>
-                <TableHead className="text-base text-black font-medium">
+                <TableHead className="text-base text-black font-semibold">
                   Action
                 </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {quranLSStudents?.data.map((user: TQuranLSUser) => (
-                <TableRow key={user._id}>
-                  <TableCell className="font-medium">{user.userName}</TableCell>
-                  <TableCell>{user.paymentMethod}</TableCell>
-                  <TableCell>{user.RegFeeNumber}</TableCell>
-                  <TableCell>{user.phoneNumber}</TableCell>
-                  <TableCell>{user.batchNo}</TableCell>
-                  <TableCell>{user.status}</TableCell>
-                  <TableCell>
-                    <Ellipsis />
-                  </TableCell>
-                </TableRow>
-              ))}
+              {quranLSStudents?.data.map(
+                (user: TQuranLSUser, index: number) => (
+                  <TableRow
+                    key={user._id}
+                    className={`${
+                      user.status === "completed" &&
+                      "bg-green-500 hover:bg-green-500 text-white"
+                    } ${
+                      user.status === "waiting" &&
+                      "bg-red-400 hover:bg-red-500 text-white"
+                    } `}
+                  >
+                    <TableCell className="font-semibold">{index + 1}</TableCell>
+                    <TableCell className="font-medium">
+                      {user.userName}
+                    </TableCell>
+                    <TableCell>{user.paymentMethod}</TableCell>
+                    <TableCell>{user.RegFeeNumber}</TableCell>
+                    <TableCell>{user.phoneNumber}</TableCell>
+                    <TableCell>{user.whatsAppNumber}</TableCell>
+                    <TableCell>{user.batchNo}</TableCell>
+                    <TableCell className="capitalize">{user.status}</TableCell>
+                    <TableCell>
+                      <StatusChangeDropdown
+                        studentId={user._id}
+                        currentStatus={user.status}
+                      />
+                    </TableCell>
+                  </TableRow>
+                )
+              )}
             </TableBody>
           </Table>
         ) : (

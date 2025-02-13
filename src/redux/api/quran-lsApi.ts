@@ -20,10 +20,21 @@ const quranLSApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["quran-ls"],
     }),
+    updateQuranLSUser: builder.mutation({
+      query: (payload) => {
+        return {
+          url: `/quran-ls-registration/${payload.studentId}`,
+          method: "PATCH",
+          body: payload.updatedData,
+        };
+      },
+      invalidatesTags: ["quran-ls"],
+    }),
   }),
 });
 
 export const {
   useAddQuranLSUserRegistrationMutation,
   useGetQuranLSUsersQuery,
+  useUpdateQuranLSUserMutation,
 } = quranLSApi;
