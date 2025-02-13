@@ -45,6 +45,9 @@ const ManageQuranLSStudent = () => {
                   Batch
                 </TableHead>
                 <TableHead className="text-base text-black font-medium">
+                  Status
+                </TableHead>
+                <TableHead className="text-base text-black font-medium">
                   Action
                 </TableHead>
               </TableRow>
@@ -57,6 +60,7 @@ const ManageQuranLSStudent = () => {
                   <TableCell>{user.RegFeeNumber}</TableCell>
                   <TableCell>{user.phoneNumber}</TableCell>
                   <TableCell>{user.batchNo}</TableCell>
+                  <TableCell>{user.status}</TableCell>
                   <TableCell>
                     <Ellipsis />
                   </TableCell>

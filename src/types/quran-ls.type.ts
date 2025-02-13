@@ -13,5 +13,6 @@ export type TQuranLSUser = {
   RegFeeNumber: string;
   createdAt: string;
   updatedAt: string;
+  status: "default" | "completed" | "waiting";
   __v: number;
 };

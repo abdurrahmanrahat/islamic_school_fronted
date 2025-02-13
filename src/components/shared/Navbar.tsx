@@ -94,13 +94,13 @@ const Navbar = () => {
         <ActiveLink href="/about">About</ActiveLink>
       </li>
       {/* conditional */}
-      <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
+      {/* <li className="hover:text-yellow-600 transition-colors duration-500 px-2 py-[1px] md:py-4">
         {isAdmin && <ActiveLink href="/dashboard/admin">Dashboard</ActiveLink>}
         {isInstructor && (
           <ActiveLink href="/dashboard/instructor">Dashboard</ActiveLink>
         )}
         {isStudent && <ActiveLink href="/dashboard">Dashboard</ActiveLink>}
-      </li>
+      </li> */}
     </>
   );
 
